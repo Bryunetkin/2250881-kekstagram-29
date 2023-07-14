@@ -19,6 +19,12 @@ const createPost = (dataPictures) => {
   postElement.querySelector(".picture__comments").textContent =
     dataPictures.comments.length;
   galleryFragment.append(postElement);
+
+  // Вешает обработчик - по клику открывает пост
+  postElement.addEventListener("click", () => {
+    openModal(dataPictures);
+  });
+  return postElement;
 };
 
 const renderPosts = () => {
